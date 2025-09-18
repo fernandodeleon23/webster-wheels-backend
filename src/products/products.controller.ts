@@ -1,4 +1,4 @@
-import { Controller, Get, Inject, Param, Post, UseInterceptors } from '@nestjs/common';
+import { Controller, Delete, Get, Inject, Param, Post, UseInterceptors } from '@nestjs/common';
 import { ProductsService } from './products.service';
 
 @Controller('products')
@@ -20,7 +20,7 @@ export class ProductsController{
         return await this.productsService.getProduct( params.id );
     }
 
-    @Post('clear-cache')
+    @Delete('cache')
 	async clearCache(){
 
 		await this.productsService.clearCache();
